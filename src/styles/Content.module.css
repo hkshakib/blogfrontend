@@ -2,4 +2,42 @@
     width: 80%;
     margin: 0 auto;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.PostBox{
+    flex-basis: 19%;
+    display: flex;
+    flex-direction: column;
+    background: #f2f4f8;
+    height: 200px;
+    /* border: 1px solid black; */
+    margin:10px 0 50px 0 ;
+    padding: 15px;
+    
+}
+
+.title{
+    flex-basis: 90%;
+    font-size:20px ;
+}
+
+.content {
+    flex-basis: 60%;
+    font-size: 15px;
+}
+
+.PostBox button{
+    background: white;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.PostBox button:hover{
+    background: black;
+    color: white;
 }
