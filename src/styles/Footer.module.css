@@ -1,0 +1,19 @@
+.Container{
+    width: 80%;
+    margin: 0 auto;
+}
+.FixedFooter{
+    width: 100%;
+    position: fixed;        
+    background: #333;
+    padding: 10px 0;
+    color: #fff;
+}
+
+.FixedFooter{
+    bottom: 0;
+}    
+
+.Container p{
+    line-height: 200px;
+}
