@@ -7,7 +7,7 @@ const Content = () => {
 
     useEffect(() => {
         const fetchApi = async () => {
-            const res = await fetch("http://127.0.0.1:8000/posts/2");
+            const res = await fetch("http://127.0.0.1:8000/posts");
             const data = await res.json();
             SetPost(data);
         };
@@ -17,109 +17,17 @@ const Content = () => {
     }, []);
 
 
-    if (Post) {
-        console.log(Post);
-    }
-
-
     return (
         <div className={Classes.Container}>
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>
-
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>
-
-
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>
-
-
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>
-
-
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>
-
-
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>
-
-
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>
-
-
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>
-
-
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>
-
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>
-            <div className={Classes.PostBox}>
-                <span className={Classes.title}> {Post?.title} </span>
-                <button>View More</button>
-            </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+            {Post?.map((posts) => {
+                return (
+                    <div className={Classes.PostBox}>
+                        <span className={Classes.title}>{posts.title}</span>
+                        
+                        <button>View More</button>
+                    </div>
+                )
+            })}
         </div>
     );
 }
