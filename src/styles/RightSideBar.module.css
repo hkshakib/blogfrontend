@@ -1,0 +1,5 @@
+.RightSideBar {
+    flex-basis: 10%;
+    display: flex;
+    background: #f2f6f8;
+}

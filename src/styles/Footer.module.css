@@ -5,9 +5,9 @@
 .FixedFooter{
     width: 100%;
     position: fixed;        
-    background: #333;
+    background: #F0FFFF;
     padding: 10px 0;
-    color: #fff;
+    color: black;
 }
 
 .FixedFooter{

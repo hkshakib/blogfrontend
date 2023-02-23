@@ -1,18 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Classes from '../styles/Navbar.module.css';
 
 const Navbar = () => {
+
+    const [category, setCategory] = useState(null);
+
+    useEffect(() => {
+        const fetchApi = async () => {
+            const res = await fetch("http://127.0.0.1:8000/category");
+            const data = await res.json();
+            setCategory(data);
+        };
+
+        fetchApi();
+
+    }, []);
+
     return (
         <div className={Classes.FixedNavbar}>
             <div className={Classes.navbar}>
                 <nav>
-                    <a href="#">Home</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Technology</a>
-                    <a href="#">Sports</a>
-                    <a href="#">Science</a>
-                    <a href="#">Videos</a>
-                    <a href="#">About Us</a>
+                    <a className={Classes.active} href="#">Home</a>
+                    {category?.map((categorys) => {
+                        return (
+                            <div>
+                                <a href='#'>{categorys.name}</a>
+                            </div>
+                        )
+                    })}
+                    <div className={Classes.SignUp}>Beacme A Writer</div>
                 </nav>
             </div>
         </div>

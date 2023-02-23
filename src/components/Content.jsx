@@ -3,13 +3,13 @@ import Classes from '../styles/Content.module.css';
 
 const Content = () => {
 
-    const [Post, SetPost] = useState(null);
+    const [post, setPost] = useState(null);
 
     useEffect(() => {
         const fetchApi = async () => {
             const res = await fetch("http://127.0.0.1:8000/posts");
             const data = await res.json();
-            SetPost(data);
+            setPost(data);
         };
 
         fetchApi();
@@ -17,14 +17,58 @@ const Content = () => {
     }, []);
 
 
+    const stringReducer = (data, amount) => {
+        let string = data.split(/<\/?\w*>/);
+        string = string.reduce((data, one) => data += one);
+        string = string.substr(0, amount);
+        return string;
+    }
+
     return (
         <div className={Classes.Container}>
-            {Post?.map((posts) => {
+            {post?.map((posts) => {
                 return (
                     <div className={Classes.PostBox}>
                         <span className={Classes.title}>{posts.title}</span>
-                        
-                        <button>View More</button>
+                        <span className={Classes.content}>{stringReducer(posts.content, 100)} . . .</span>
+                        <button>READ</button>
+                    </div>
+                )
+            })}
+
+            {post?.map((posts) => {
+                return (
+                    <div className={Classes.PostBox}>
+                        <span className={Classes.title}>{posts.title}</span>
+                        <span className={Classes.content}>{stringReducer(posts.content, 100)} . . .</span>
+                        <button>READ</button>
+                    </div>
+                )
+            })}
+            {post?.map((posts) => {
+                return (
+                    <div className={Classes.PostBox}>
+                        <span className={Classes.title}>{posts.title}</span>
+                        <span className={Classes.content}>{stringReducer(posts.content, 100)} . . .</span>
+                        <button>READ</button>
+                    </div>
+                )
+            })}
+            {post?.map((posts) => {
+                return (
+                    <div className={Classes.PostBox}>
+                        <span className={Classes.title}>{posts.title}</span>
+                        <span className={Classes.content}>{stringReducer(posts.content, 100)} . . .</span>
+                        <button>READ</button>
+                    </div>
+                )
+            })}
+            {post?.map((posts) => {
+                return (
+                    <div className={Classes.PostBox}>
+                        <span className={Classes.title}>{posts.title}</span>
+                        <span className={Classes.content}>{stringReducer(posts.content, 100)} . . .</span>
+                        <button>READ</button>
                     </div>
                 )
             })}
