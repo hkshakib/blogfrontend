@@ -12,46 +12,71 @@
 
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
-nav a {
+.PrimaryClasses {
+    flex-basis: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MainClass {
+    flex-basis: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.AuthClasses {
+    flex-basis: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.PrimaryClasses a, .MainClass a {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 14px;
     padding: 7px 25px;
     display: inline-block;
-    
 }
 
-nav a:hover {
+
+.PrimaryClasses a:hover, .SignUp a:hover, .Login a:hover {
     background: white;
     color: black;
-    border-radius: 5px;
-    /* border: 1px solid white; */
 }
 
-.active {
-    /* color: rgb(153, 0, 255); */
+.HomeIcon {
+    font-size: 16px;
+    letter-spacing: 2.19px;
+    cursor: pointer;
+}
+
+.SignUp, .Login {
+    flex-basis: 49%;
+    display: flex;
+}
+
+.SignUp a, .Login a{
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 7px 25px;
+    display: inline-block;
 }
 
 .SignUp {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    width: 150px;
-    height: 40px;
-    right: 200px;
-    top: 5px;
-    border: 1px solid white;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-size: 14px;
+    justify-content: flex-end;
 }
 
-.SignUp:hover {
-    background: white;
-    color: black;
+.SignUp a{
+    margin-left: 20px;
 }
+

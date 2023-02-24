@@ -26,6 +26,7 @@
 
 .active {
     background: black;
+    border-left: 5px solid green;
 }
 
 .Icon {
