@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Classes from '../styles/Content.module.css';
 
-const Content = () => {
+const Content = (props) => {
 
     const [post, setPost] = useState(null);
 
