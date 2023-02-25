@@ -16,6 +16,7 @@ const Content = (props) => {
 
     }, []);
 
+    console.log(post);
 
     const stringReducer = (data, amount) => {
         let string = data.split(/<\/?\w*>/);
@@ -72,6 +73,7 @@ const Content = (props) => {
                     </div>
                 )
             })}
+            
         </div>
     );
 }

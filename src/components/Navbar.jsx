@@ -16,9 +16,20 @@ const Navbar = () => {
 
     // }, []);
 
+    const HandleScroll =()=>{
+        let Class = document.getElementByClass("navbar");
+        let sticky = Class.offsetTop;
+        if (window.pageYOffset >= sticky) {
+            Class.classList.add("sticky")
+          } else {
+            Class.classList.remove("sticky");
+          }
+    }
+
+
     return (
-        <div className={Classes.FixedNavbar}>
-            <div className={Classes.navbar}>
+        <div className={Classes.FixedNavbar} >
+            <div className={Classes.navbar} >
                 <nav>
                     <div className={Classes.PrimaryClasses}>
                         <a className={Classes.active} href="#">Bookmarks</a>

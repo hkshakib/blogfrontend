@@ -6,11 +6,20 @@
 }
 
 body {
-    padding-top: 60px;
-    padding-bottom: 40px;
+    /* padding-top: 60px; */
+    /* padding-bottom: 40px; */
     background-color: white;
 }
 
 .App {
     display: flex;
+    flex-direction: column;
+}
+
+.Navbar, .Footer {
+    flex-basis: 10%;
+}
+
+.ContentWrapper {
+    flex-basis: 80%;
 }

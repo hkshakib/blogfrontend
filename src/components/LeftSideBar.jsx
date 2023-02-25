@@ -15,11 +15,15 @@ const LeftSideBar = () => {
         fetchApi();
 
     }, []);
-
+    // console.log(category);
+    // let AllCategory = {
+    //     id: 1,
+    //     name: 'All Category',
+    // }
 
     return (
-        <div className={Classes.LeftSideBar}>
-            <div className={`${Classes.CategoryName} ${Classes.active}`}> <MdCategory className={Classes.Icon}/> All Category</div>
+        <div className={Classes.LeftSideBar} >
+            <div className={`${Classes.CategoryName} ${Classes.active} ${Classes.TopCat}`}> <MdCategory className={Classes.Icon}/> All Category</div>
             {category?.map((categorys) => {
                 return (
                     <div>

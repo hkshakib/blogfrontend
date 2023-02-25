@@ -1,6 +1,6 @@
 .Container {
     flex-basis: 60%;
-    margin: 0 auto;
+    margin: 50px auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

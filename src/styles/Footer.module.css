@@ -1,13 +1,15 @@
 .Container{
+    flex-basis: 10%;
+    display: flex;
     width: 80%;
     margin: 0 auto;
+    justify-content: center;
 }
 .FixedFooter{
     width: 100%;
-    position: fixed;        
-    background: #F0FFFF;
+    background: #2F2235;
     padding: 10px 0;
-    color: black;
+    color: white;
 }
 
 .FixedFooter{

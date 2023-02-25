@@ -1,6 +1,5 @@
 .Main {
     display: flex;
-    flex-direction: row;
     background: #FFFFFF;
-    height: auto;
+    margin: 35px 0 35px 0;
 }

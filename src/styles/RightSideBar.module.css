@@ -1,5 +1,6 @@
 .RightSideBar {
     flex-basis: 15%;
     display: flex;
-    background: #f2f6f8;
+    background: #BFC3BA;
+    margin: 50px auto 50px;
 }

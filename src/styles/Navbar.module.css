@@ -1,18 +1,29 @@
 .FixedNavbar {
+    top: 0;
     width: 100%;
     position: fixed;
     background: #2F2235;
     padding: 10px 0;
     color: white;
+    overflow: hidden;
+    
 }
 
-.FixedNavbar {
+.sticky {
+    position: fixed;
     top: 0;
+    width: 100%;
 }
+
+.sticky+.content {
+    padding-top: 60px;
+}
+
 
 nav {
     display: flex;
     justify-content: flex-start;
+    /* margin-bottom: 50px; */
 }
 
 .PrimaryClasses {
@@ -36,7 +47,8 @@ nav {
     align-items: center;
 }
 
-.PrimaryClasses a, .MainClass a {
+.PrimaryClasses a,
+.MainClass a {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
@@ -46,7 +58,9 @@ nav {
 }
 
 
-.PrimaryClasses a:hover, .SignUp a:hover, .Login a:hover {
+.PrimaryClasses a:hover,
+.SignUp a:hover,
+.Login a:hover {
     background: white;
     color: black;
 }
@@ -57,12 +71,14 @@ nav {
     cursor: pointer;
 }
 
-.SignUp, .Login {
+.SignUp,
+.Login {
     flex-basis: 49%;
     display: flex;
 }
 
-.SignUp a, .Login a{
+.SignUp a,
+.Login a {
     border: 1px solid white;
     color: white;
     text-decoration: none;
@@ -76,7 +92,6 @@ nav {
     justify-content: flex-end;
 }
 
-.SignUp a{
+.SignUp a {
     margin-left: 20px;
 }
-
