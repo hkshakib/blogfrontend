@@ -1,6 +1,34 @@
 .RightSideBar {
     flex-basis: 15%;
     display: flex;
-    background: #BFC3BA;
+    flex-direction: column;
+    background: #fff;
     margin: 50px auto 50px;
+}
+
+.AuthorList, .FeaturedPost {
+    flex-basis: auto;
+}
+
+.FeaturedPost{
+    margin-top: 20px;
+}
+.AuthorBox {
+    padding: 15px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background: #3F3244;
+    display: flex;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.AuthorTitle {
+    /* padding: 15px; */
+    margin-bottom: 10px;
+    display: flex;
+    color: black;
+    text-transform: uppercase;
+    font-size: 18px;
+    justify-content: center;
 }

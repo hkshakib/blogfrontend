@@ -1,19 +1,14 @@
+import { Route, Routes } from "react-router-dom"
 import '../styles/App.css';
-import Navbar from '../components/Navbar';
-import Main from '../components/Main';
-import Footer from '../components/Footer';
+import Blog from '../components/Blog';
 
 function App() {
   return (
+
     <div className="App">
-      <div className="Navbar"><Navbar/></div>
-      <div className='ContentWrapper'> <Main/> </div>
-      <div className='Footer'><Footer/></div>
-
-
-      {/* <Navbar/> */}
-      {/* <Main/> */}
-      {/* <Footer/> */}
+      <Routes>
+        <Route path="/" element={<Blog />} />
+      </Routes>
     </div>
   );
 }

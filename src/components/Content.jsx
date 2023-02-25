@@ -29,8 +29,8 @@ const Content = (props) => {
         <div className={Classes.Container}>
             {post?.map((posts) => {
                 return (
-                    <div className={Classes.PostBox}>
-                        <span className={Classes.title}>{posts.title}</span>
+                    <div className={Classes.PostBox} key={posts.id} >
+                        <span className={Classes.title} >{posts.title}</span>
                         <span className={Classes.content}>{stringReducer(posts.content, 100)} . . .</span>
                         <button>READ</button>
                     </div>
@@ -39,41 +39,44 @@ const Content = (props) => {
 
             {post?.map((posts) => {
                 return (
-                    <div className={Classes.PostBox}>
-                        <span className={Classes.title}>{posts.title}</span>
+                    <div className={Classes.PostBox} key={posts.id} >
+                        <span className={Classes.title} >{posts.title}</span>
                         <span className={Classes.content}>{stringReducer(posts.content, 100)} . . .</span>
                         <button>READ</button>
                     </div>
                 )
             })}
+
             {post?.map((posts) => {
                 return (
-                    <div className={Classes.PostBox}>
-                        <span className={Classes.title}>{posts.title}</span>
+                    <div className={Classes.PostBox} key={posts.id} >
+                        <span className={Classes.title} >{posts.title}</span>
                         <span className={Classes.content}>{stringReducer(posts.content, 100)} . . .</span>
                         <button>READ</button>
                     </div>
                 )
             })}
+
             {post?.map((posts) => {
                 return (
-                    <div className={Classes.PostBox}>
-                        <span className={Classes.title}>{posts.title}</span>
+                    <div className={Classes.PostBox} key={posts.id} >
+                        <span className={Classes.title} >{posts.title}</span>
                         <span className={Classes.content}>{stringReducer(posts.content, 100)} . . .</span>
                         <button>READ</button>
                     </div>
                 )
             })}
+
             {post?.map((posts) => {
                 return (
-                    <div className={Classes.PostBox}>
-                        <span className={Classes.title}>{posts.title}</span>
+                    <div className={Classes.PostBox} key={posts.id} >
+                        <span className={Classes.title} >{posts.title}</span>
                         <span className={Classes.content}>{stringReducer(posts.content, 100)} . . .</span>
                         <button>READ</button>
                     </div>
                 )
             })}
-            
+
         </div>
     );
 }
