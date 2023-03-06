@@ -1,11 +1,23 @@
-import { Link } from "react-router-dom"
-import React from 'react';
+import { Link } from "react-router-dom";
+import React, { useState } from 'react';
 import Classes from '../styles/Navbar.module.css';
 
 const Navbar = () => {
+    const [colorChange, setColorchange] = useState(false);
+    const changeNavbarColor = () => {
+        if (window.scrollY >= 80) {
+            setColorchange(true);
+        }
+        else {
+            setColorchange(false);
+        }
+    };
+    window.addEventListener('scroll', changeNavbarColor);
+    
+
     return (
-        <div className={Classes.FixedNavbar} >
-            <div className={Classes.navbar} >
+        <div className={ colorChange ? `${Classes.FixedNavbar} ${Classes.NavActive}` : `${Classes.FixedNavbar}`} >
+            <div className={Classes.NavBar} >
                 <nav>
 
                     <div className={Classes.PrimaryClasses}>
@@ -18,7 +30,7 @@ const Navbar = () => {
                     </div>
 
                     <div className={Classes.AuthClasses}>
-                        
+
                         <div className={Classes.SignUp}>
                             <Link to="/signup"> Beacme A Writer </Link>
                         </div>

@@ -18,22 +18,26 @@
     border-radius: 10px;
 }
 
-.PostBox button {
+.PostBox button,
+.PostBox Link {
     background: #A9ACA9;
     height: 50px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    text-decoration: none;
+    color: black;
 }
 
-.PostBox button:hover {
+.PostBox button:hover,
+.PostBox Link:hover {
     background: black;
     color: white;
 }
 
 .title {
     flex-basis: 40%;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 400;
 }
 

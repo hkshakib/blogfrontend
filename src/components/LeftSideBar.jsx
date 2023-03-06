@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MdCategory, MdOutlineCategory } from "react-icons/md";
 import Classes from '../styles/LeftSideBar.module.css';
 
-const LeftSideBar = () => {
+const LeftSideBar = (props) => {
     const [category, setCategory] = useState(null);
 
     useEffect(() => {
@@ -11,18 +11,27 @@ const LeftSideBar = () => {
             const data = await res.json();
             setCategory(data);
         };
-
-        fetchApi();
+        const Category = [ "Story", "Music", "Technology", "Poem", "Novel", "Information","Child", "People" ];
+        // fetchApi();
+        setCategory(Category);
 
     }, []);
 
+    const handleCategoryClick = (category)=> {
+        props.onCategoryClick(category);
+    }
+
+    
+
     return (
         <div className={Classes.LeftSideBar} >
-            <div className={`${Classes.CategoryName} ${Classes.active} ${Classes.TopCat}`}> <MdCategory className={Classes.Icon}/> All Category</div>
+            <div className={`${Classes.CategoryName} ${Classes.active} ${Classes.TopCat}`}> <MdCategory className={Classes.Icon} /> All Category</div>
             {category?.map((categorys) => {
                 return (
                     <div key={categorys.id}>
-                        <div className={Classes.CategoryName} > <MdOutlineCategory className={Classes.Icon}/> {categorys.name} </div>
+                        <div className={Classes.CategoryName} onClick={ () => handleCategoryClick(categorys) } >
+                            <MdOutlineCategory className={Classes.Icon} />{categorys}
+                        </div>
                     </div>
                 )
             })}

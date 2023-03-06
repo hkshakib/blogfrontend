@@ -1,13 +1,17 @@
+import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react'
+import Pagination from '../components/Pagination';
 import Classes from '../styles/Content.module.css';
 
-const Content = (props) => {
+
+const Content = () => {
 
     const [post, setPost] = useState(null);
 
+
     useEffect(() => {
         const fetchApi = async () => {
-            const res = await fetch("http://127.0.0.1:8000/posts");
+            const res = await fetch("https://jsonplaceholder.typicode.com/posts");
             const data = await res.json();
             setPost(data);
         };
@@ -16,7 +20,19 @@ const Content = (props) => {
 
     }, []);
 
-    console.log(post);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [itemsPerPage] = useState(75);
+    const [totalItems] = useState(100);
+
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    // const currentItems = post.slice(indexOfFirstItem, indexOfLastItem);
+
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
+    console.log(typeof (post));
 
     const stringReducer = (data, amount) => {
         let string = data.split(/<\/?\w*>/);
@@ -25,59 +41,31 @@ const Content = (props) => {
         return string;
     }
 
+    const HandleOnClick = (post_id) => {
+
+    }
+
     return (
-        <div className={Classes.Container}>
-            {post?.map((posts) => {
-                return (
-                    <div className={Classes.PostBox} key={posts.id} >
-                        <span className={Classes.title} >{posts.title}</span>
-                        <span className={Classes.content}>{stringReducer(posts.content, 100)} . . .</span>
-                        <button>READ</button>
-                    </div>
-                )
-            })}
+        <>
+            <div className={Classes.Container}>
+                {post?.slice(indexOfFirstItem, indexOfLastItem).map((posts) => {
+                    return (
+                        <div className={Classes.PostBox} key={posts.id} >
+                            <span className={Classes.title} >{stringReducer(posts.title, 30)}</span>
+                            <span className={Classes.content}>{stringReducer(posts.body, 50)} . . .</span>
+                            <button onClick={() => { HandleOnClick(posts.id) }}>READ</button>
+                            {/* <button onClick={() => { HandleOnClick(posts.id) }}> <Link to={`/posts/${posts.id}`}>READ</Link></button> */}
+                        </div>
+                    )
+                })}
+            </div>
+            {/* <Pagination
+                currentPage={currentPage}
+                totalPages={Math.ceil(totalItems / itemsPerPage)}
+                onPageChange={handlePageChange}
+            /> */}
+        </>
 
-            {post?.map((posts) => {
-                return (
-                    <div className={Classes.PostBox} key={posts.id} >
-                        <span className={Classes.title} >{posts.title}</span>
-                        <span className={Classes.content}>{stringReducer(posts.content, 100)} . . .</span>
-                        <button>READ</button>
-                    </div>
-                )
-            })}
-
-            {post?.map((posts) => {
-                return (
-                    <div className={Classes.PostBox} key={posts.id} >
-                        <span className={Classes.title} >{posts.title}</span>
-                        <span className={Classes.content}>{stringReducer(posts.content, 100)} . . .</span>
-                        <button>READ</button>
-                    </div>
-                )
-            })}
-
-            {post?.map((posts) => {
-                return (
-                    <div className={Classes.PostBox} key={posts.id} >
-                        <span className={Classes.title} >{posts.title}</span>
-                        <span className={Classes.content}>{stringReducer(posts.content, 100)} . . .</span>
-                        <button>READ</button>
-                    </div>
-                )
-            })}
-
-            {post?.map((posts) => {
-                return (
-                    <div className={Classes.PostBox} key={posts.id} >
-                        <span className={Classes.title} >{posts.title}</span>
-                        <span className={Classes.content}>{stringReducer(posts.content, 100)} . . .</span>
-                        <button>READ</button>
-                    </div>
-                )
-            })}
-
-        </div>
     );
 }
 
