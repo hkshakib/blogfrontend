@@ -42,7 +42,7 @@ const Content = () => {
     }
 
     const HandleOnClick = (post_id) => {
-
+        
     }
 
     return (
@@ -53,8 +53,8 @@ const Content = () => {
                         <div className={Classes.PostBox} key={posts.id} >
                             <span className={Classes.title} >{stringReducer(posts.title, 30)}</span>
                             <span className={Classes.content}>{stringReducer(posts.body, 50)} . . .</span>
-                            <button onClick={() => { HandleOnClick(posts.id) }}>READ</button>
-                            {/* <button onClick={() => { HandleOnClick(posts.id) }}> <Link to={`/posts/${posts.id}`}>READ</Link></button> */}
+                            {/* <button onClick={() => { HandleOnClick(posts.id) }}>READ</button> */}
+                            <button onClick={() => { HandleOnClick(posts.id) }}> <Link to={`/post_details/${posts.id}`}>READ</Link></button>
                         </div>
                     )
                 })}

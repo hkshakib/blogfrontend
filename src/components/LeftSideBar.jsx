@@ -11,17 +11,17 @@ const LeftSideBar = (props) => {
             const data = await res.json();
             setCategory(data);
         };
-        const Category = [ "Story", "Music", "Technology", "Poem", "Novel", "Information","Child", "People" ];
+        const Category = ["Story", "Music", "Technology", "Poem", "Novel", "Information", "Child", "People"];
         // fetchApi();
         setCategory(Category);
 
     }, []);
 
-    const handleCategoryClick = (category)=> {
+    const handleCategoryClick = (category) => {
         props.onCategoryClick(category);
     }
 
-    
+
 
     return (
         <div className={Classes.LeftSideBar} >
@@ -29,7 +29,7 @@ const LeftSideBar = (props) => {
             {category?.map((categorys) => {
                 return (
                     <div key={categorys.id}>
-                        <div className={Classes.CategoryName} onClick={ () => handleCategoryClick(categorys) } >
+                        <div className={Classes.CategoryName} onClick={() => handleCategoryClick(categorys)} >
                             <MdOutlineCategory className={Classes.Icon} />{categorys}
                         </div>
                     </div>

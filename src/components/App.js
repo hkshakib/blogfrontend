@@ -8,8 +8,8 @@ function App() {
 
     <div className="App">
       <Routes>
-        <Route path="/" element={<Blog />} />
-        <Route path="/post_details/:id" element={<PostPage />} />
+        <Route path="/" exact element={<Blog />} />
+        <Route path="/post_details/:id" element={<PostPage/>} />
       </Routes>
     </div>
   );
