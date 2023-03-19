@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 const Blog = () => {
     return (
         <>
-            <div className="Navbar">
+            {/* <div className="Navbar">
                 <Navbar />
             </div>
 
@@ -16,7 +16,9 @@ const Blog = () => {
 
             <div className='Footer'>
                 <Footer />
-            </div>
+            </div> */}
+
+            
             
         </>
     );
